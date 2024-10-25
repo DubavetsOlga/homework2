@@ -3,9 +3,31 @@
 }
 
 .hw {
+    margin: 50px;
+    position: relative;
+}
 
+.hw::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -20px;
+    border-top: 1px solid #D9D9D9
+}
+
+.hw::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -20px;
+    border-bottom: 1px solid #D9D9D9;
 }
 
 .hwTitle {
+    font-family: Montserrat, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
 
+    margin: 100px 50px 0;
 }
