@@ -3,6 +3,10 @@ import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import { restoreState } from '../hw06/localStorage/localStorage'
 import s from './Clock.module.css'
 
+const addedFirstZero = (num: number) => {
+    return num < 10 ? `0${num}` : num;
+}
+
 function Clock() {
     const [timerId, setTimerId] = useState<number | undefined>(undefined)
     // for autotests // не менять // можно подсунуть в локалСторэдж нужную дату, чтоб увидеть как она отображается
@@ -29,7 +33,7 @@ function Clock() {
         setShow(false)
     }
 
-    const stringTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}` || <br/>
+    const stringTime = `${addedFirstZero(date.getHours())}:${addedFirstZero(date.getMinutes())}:${addedFirstZero(date.getSeconds())}` || <br/>
     // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = `${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}` || <br/>
     // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
